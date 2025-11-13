@@ -3,13 +3,23 @@ const { data } = Astro.props;
 ---
 
 <article>
-  <h2>{data.firstname}</h2>
-  <p>Mobil: {data.mobile}</p>
-  <img src=`https://kea-alt-del.dk/t7/images/webp/640/${data.id}.webp` alt="" />
+  <img src=`https://flxrgxrvxeximsskwubc.supabase.co/storage/v1/object/public/people/${data.image}` alt="profilbillede" />
+  <div>
+    <h2>{data.firstname} {data.lastname}</h2>
+    <p>Email: {data.email}</p>
+    <p>Mobil: {data.mobile}</p>
+  </div>
 </article>
 
 <style>
   img {
     max-width: 100%;
+  }
+  article {
+    text-align: right;
+    border-right: 1px solid;
+  }
+  div {
+    padding-right: 1rem;
   }
 </style>

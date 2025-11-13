@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 
 const endpoint = "https://flxrgxrvxeximsskwubc.supabase.co/rest/v1/people?select=*";
+
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZseHJneHJ2eGV4aW1zc2t3dWJjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM4NTEwNTAsImV4cCI6MjA1OTQyNzA1MH0.xAOE81P0J3Rbdu_mZXneRAPUTNpiVhn7VSpHU8S3AnU";
 
 const options = {
@@ -17,7 +18,7 @@ console.log(data);
 ---
 
 <Layout>
-  <h1>Products</h1>
+  <h1>Medlemmer</h1>
   <section>
     {data.map((product) => <Card data={product} />)}
   </section>
