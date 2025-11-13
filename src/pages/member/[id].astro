@@ -29,5 +29,23 @@ const { post } = Astro.props;
 
 <Layout>
   <h1>{post.firstname} {post.lastname}</h1>
-  <img src=`https://flxrgxrvxeximsskwubc.supabase.co/storage/v1/object/public/people/${post.image}` alt="profilbillede" />
+  <article>
+    <img src=`https://flxrgxrvxeximsskwubc.supabase.co/storage/v1/object/public/people/${post.image}` alt="profilbillede" />
+    <div>
+      <p>{post.description}</p>
+      <p>Email: {post.email}</p>
+      <p>Mobil: {post.mobile}</p>
+    </div>
+  </article>
 </Layout>
+
+<style>
+  article {
+    display: flex;
+    gap: 1rem;
+  }
+  div > p {
+    margin-top: 0;
+    max-width: 400px;
+  }
+</style>
