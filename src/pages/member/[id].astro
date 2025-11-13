@@ -33,6 +33,15 @@ const { post } = Astro.props;
     <img src=`https://flxrgxrvxeximsskwubc.supabase.co/storage/v1/object/public/people/${post.image}` alt="profilbillede" />
     <div>
       <p>{post.description}</p>
+      {
+        post.skills && (
+          <ul>
+            {post.skills.emner.map((elm) => (
+              <li>{elm}</li>
+            ))}
+          </ul>
+        )
+      }
       <p>Email: {post.email}</p>
       <p>Mobil: {post.mobile}</p>
     </div>
