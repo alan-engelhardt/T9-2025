@@ -19,6 +19,9 @@ console.log(data);
 
 <Layout>
   <h1>Medlemmer</h1>
+  <button>Alle</button>
+  <button>Aktive</button>
+  <button>Passive</button>
   <h3>Lektorer</h3>
   <section>
     {data.map((member) => member.title == "Lektor" && <Card data={member} />)}
@@ -36,3 +39,17 @@ console.log(data);
     gap: 1rem;
   }
 </style>
+
+<script>
+  document.querySelectorAll("button").forEach((button) => button.addEventListener("click", filtrer));
+
+  function filtrer(e) {
+    document.querySelectorAll("section a").forEach((elm) => elm.classList.remove("hide"));
+    if (e.target.textContent == "Aktive") {
+      document.querySelectorAll(".passiv").forEach((elm) => elm.classList.add("hide"));
+    }
+    if (e.target.textContent == "Passive") {
+      document.querySelectorAll(".aktiv").forEach((elm) => elm.classList.add("hide"));
+    }
+  }
+</script>
