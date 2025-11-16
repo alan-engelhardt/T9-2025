@@ -19,8 +19,13 @@ console.log(data);
 
 <Layout>
   <h1>Medlemmer</h1>
+  <h3>Lektorer</h3>
   <section>
-    {data.map((product) => <Card data={product} />)}
+    {data.map((member) => member.title == "Lektor" && <Card data={member} />)}
+  </section>
+  <h3>Adjunkter</h3>
+  <section>
+    {data.map((member) => member.title == "Adjunkt" && <Card data={member} />)}
   </section>
 </Layout>
 

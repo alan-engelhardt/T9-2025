@@ -3,7 +3,7 @@ const { data } = Astro.props;
 ---
 
 <a href=`member/${data.id}`>
-  <article>
+  <article class={data.active && "aktiv"}>
     <img src=`https://flxrgxrvxeximsskwubc.supabase.co/storage/v1/object/public/people/${data.image}` alt="profilbillede" />
     <div>
       <h2>{data.firstname} {data.lastname}</h2>
@@ -12,14 +12,26 @@ const { data } = Astro.props;
 </a>
 
 <style>
+  article {
+    position: relative;
+  }
   img {
     max-width: 100%;
   }
   article {
     text-align: right;
+    border-top: 1px solid;
     border-right: 1px solid;
   }
   div {
     padding-right: 1rem;
+  }
+  .aktiv::after {
+    content: "aktiv";
+    padding: 0.3rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #111;
   }
 </style>
