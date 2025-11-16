@@ -19,9 +19,11 @@ console.log(data);
 
 <Layout>
   <h1>Medlemmer</h1>
+
   <button>Alle</button>
   <button>Aktive</button>
   <button>Passive</button>
+
   <h3>Lektorer</h3>
   <section>
     {data.map((member) => member.title == "Lektor" && <Card data={member} />)}

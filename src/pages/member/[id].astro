@@ -42,7 +42,7 @@ const { post } = Astro.props;
           </ul>
         )
       }
-      <p>Email: {post.email}</p>
+      <p>Email: <a href=`mailto:${post.email}`>{post.email}</a></p>
       <p>Mobil: {post.mobile}</p>
     </div>
   </article>
@@ -56,5 +56,11 @@ const { post } = Astro.props;
   div > p {
     margin-top: 0;
     max-width: 400px;
+  }
+  a {
+    text-decoration: underline;
+  }
+  img {
+    height: fit-content;
   }
 </style>
