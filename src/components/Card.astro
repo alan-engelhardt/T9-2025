@@ -3,13 +3,24 @@ const { data } = Astro.props;
 ---
 
 <article>
-  <h2>{data.productdisplayname}</h2>
-  <p>kr. {data.price},-</p>
   <img src=`https://kea-alt-del.dk/t7/images/webp/640/${data.id}.webp` alt="" />
+  <div>
+    <h2>{data.productdisplayname}</h2>
+    <p>kr. {data.price},-</p>
+  </div>
 </article>
 
 <style>
+  article {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 2;
+    background-color: #333;
+  }
   img {
     max-width: 100%;
+  }
+  div {
+    padding: 0.5rem;
   }
 </style>
