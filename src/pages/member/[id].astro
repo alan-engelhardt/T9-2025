@@ -2,9 +2,11 @@
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const endpoint = "https://flxrgxrvxeximsskwubc.supabase.co/rest/v1/people?select=*";
+  const endpoint =
+    "https://flxrgxrvxeximsskwubc.supabase.co/rest/v1/people?select=*";
 
-  const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZseHJneHJ2eGV4aW1zc2t3dWJjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM4NTEwNTAsImV4cCI6MjA1OTQyNzA1MH0.xAOE81P0J3Rbdu_mZXneRAPUTNpiVhn7VSpHU8S3AnU";
+  const key =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZseHJneHJ2eGV4aW1zc2t3dWJjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM4NTEwNTAsImV4cCI6MjA1OTQyNzA1MH0.xAOE81P0J3Rbdu_mZXneRAPUTNpiVhn7VSpHU8S3AnU";
 
   const options = {
     method: "GET",
@@ -30,13 +32,16 @@ const { post } = Astro.props;
 <Layout>
   <h1>{post.firstname} {post.lastname}</h1>
   <article>
-    <img src=`https://flxrgxrvxeximsskwubc.supabase.co/storage/v1/object/public/people/${post.image}` alt="profilbillede" />
+    <img
+      src=`https://flxrgxrvxeximsskwubc.supabase.co/storage/v1/object/public/people/${post.image}`
+      alt="profilbillede"
+    />
     <div>
       <p>{post.description}</p>
       {
         post.skills && (
           <ul>
-            {post.skills.emner.map((elm) => (
+            {post.skills.map((elm) => (
               <li>{elm}</li>
             ))}
           </ul>
