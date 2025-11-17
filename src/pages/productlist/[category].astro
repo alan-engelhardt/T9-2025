@@ -19,7 +19,6 @@ import Layout from "../../layouts/Layout.astro";
 import Card from "../../components/Card.astro";
 const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${category}`;
 const products = await fetch(endpoint).then((res) => res.json());
-console.log(endpoint);
 ---
 
 <Layout>
