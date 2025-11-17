@@ -1,0 +1,14 @@
+---
+const { data } = Astro.props;
+---
+
+<article>
+    <a href=`productlist/${data.category}`><h2>{data.category}</h2></a>
+</article>
+
+<style>
+    h2 {
+        padding: 2rem;
+        background-color: #333;
+    }
+</style>

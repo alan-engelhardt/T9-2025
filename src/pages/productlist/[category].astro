@@ -1,0 +1,37 @@
+---
+export async function getStaticPaths() {
+    const endpoint = "https://kea-alt-del.dk/t7/api/categories";
+    const response = await fetch(endpoint);
+    const data = await response.json();
+
+    return data.map((cat) => {
+        return {
+            params: { category: cat.category },
+            props: { cat },
+        };
+    });
+}
+
+const { category } = Astro.params;
+const { cat } = Astro.props;
+
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
+const endpoint = `https://kea-alt-del.dk/t7/api/products/category=${category}`;
+const products = await fetch(endpoint).then((res) => res.json());
+---
+
+<Layout>
+    <h1>Products</h1>
+    <section>
+        {products.map((product) => <Card data={product} />)}
+    </section>
+</Layout>
+
+<style>
+    section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+</style>
