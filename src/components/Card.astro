@@ -4,23 +4,32 @@ const { data } = Astro.props;
 
 <article>
   <img src=`https://kea-alt-del.dk/t7/images/webp/640/${data.id}.webp` alt="" />
-  <div>
-    <h2>{data.productdisplayname}</h2>
-    <p>kr. {data.price},-</p>
-  </div>
+  <h2>{data.productdisplayname}</h2>
+  <p>kr. {data.price},-</p>
 </article>
 
 <style>
   article {
     display: grid;
     grid-template-rows: subgrid;
-    grid-row: span 2;
+    grid-row: span 3;
+    background-color: #553;
+    border-radius: 1em;
+    overflow: hidden;
+  }
+  article:hover {
     background-color: #333;
   }
   img {
     max-width: 100%;
   }
-  div {
-    padding: 0.5rem;
+  h2,
+  p {
+    padding: 0 1rem;
+    margin: 0;
+  }
+  p {
+    margin-bottom: 1rem;
+    text-align: right;
   }
 </style>
