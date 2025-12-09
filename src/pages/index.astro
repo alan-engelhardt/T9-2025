@@ -8,12 +8,13 @@ import Layout from "../layouts/Layout.astro";
     <fieldset>
       <legend>Login</legend>
       <label for="name">Navn</label>
-      <input type="text" id="name" />
+      <input type="text" id="firstname" />
       <label for="pw">Password</label>
       <input type="password" id="pw" />
       <input type="submit" value="Login" />
     </fieldset>
   </form>
+  <p>Skriv "Peter", "Keld" eller "Stine" i navn</p>
 </Layout>
 
 <style>
@@ -36,8 +37,12 @@ import Layout from "../layouts/Layout.astro";
   
   function login(event){
     event.preventDefault();
-    const navn = document.querySelector("#name").value;
+    const navn = document.querySelector("#firstname").value;
     const pw = document.querySelector("#pw").value;
-    console.log("navn")
+    if(navn){
+      window.location.href = `member/${navn}`;
+    }else{
+      alert("Udfyld navn");
+    }
   }
 </script>
