@@ -2,9 +2,12 @@
 const { data } = Astro.props;
 ---
 
-<a href=`member/${data.id}`>
+<a href=`member/${data.firstname}`>
   <article class={data.active && "aktiv"}>
-    <img src=`https://flxrgxrvxeximsskwubc.supabase.co/storage/v1/object/public/people/${data.image}` alt="profilbillede" />
+    <img
+      src=`https://flxrgxrvxeximsskwubc.supabase.co/storage/v1/object/public/people/${data.image}`
+      alt="profilbillede"
+    />
     <div>
       <h2>{data.firstname} {data.lastname}</h2>
     </div>
