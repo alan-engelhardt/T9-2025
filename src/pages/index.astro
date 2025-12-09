@@ -27,7 +27,17 @@ import Layout from "../layouts/Layout.astro";
   label {
     margin-top: 1rem;
     display: block;
-  }
+  }.
 </style>
 
-<script></script>
+<script>
+  const form = document.querySelector("form");
+  form.addEventListener("submit", login)
+  
+  function login(event){
+    event.preventDefault();
+    const navn = document.querySelector("#name").value;
+    const pw = document.querySelector("#pw").value;
+    console.log("navn")
+  }
+</script>
