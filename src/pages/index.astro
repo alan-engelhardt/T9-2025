@@ -4,4 +4,30 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <h1>Velkommen i klubben</h1>
+  <form action="">
+    <fieldset>
+      <legend>Login</legend>
+      <label for="name">Navn</label>
+      <input type="text" id="name" />
+      <label for="pw">Password</label>
+      <input type="password" id="pw" />
+      <input type="submit" value="Login" />
+    </fieldset>
+  </form>
 </Layout>
+
+<style>
+  form {
+    width: fit-content;
+  }
+  input[type="submit"] {
+    display: block;
+    margin-top: 1rem;
+  }
+  label {
+    margin-top: 1rem;
+    display: block;
+  }
+</style>
+
+<script></script>
